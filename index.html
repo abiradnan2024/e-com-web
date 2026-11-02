@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <link rel="shortcut icon" href="avorelle-logo.jpeg" type="image/x-icon">
+
+    <title>AVORELLE | Premium Clothing</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #090909;
+            color: #f5f2eb;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .glass {
+            background: rgba(22, 22, 22, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+        }
+
+        .glow {
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.18),
+                transparent 70%
+            );
+            filter: blur(10px);
+        }
+
+        .product-card {
+            transition: 0.35s ease;
+            transform-style: preserve-3d;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .size-btn {
+            border: 1px solid #444;
+            border-radius: 50px;
+            padding: 7px 13px;
+            font-size: 12px;
+            transition: 0.2s;
+        }
+
+        .size-btn.active {
+            background: #f5f2eb;
+            color: #090909;
+            border-color: #f5f2eb;
+        }
+
+        .filter-btn {
+            border: 1px solid #444;
+            border-radius: 50px;
+            padding: 10px 16px;
+            white-space: nowrap;
+            font-size: 12px;
+            transition: 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #f5f2eb;
+            color: #090909;
+        }
+
+        .order-btn {
+            transition: 0.25s;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background: #202020;
+        }
+
+        @media (max-width: 640px) {
+            .product-image {
+                height: 175px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="border-b border-white/10 px-3 py-3 text-center">
+        <p class="text-[10px] tracking-[3px] text-gray-400 sm:text-xs">
+            AVORELLE · PREMIUM GENTS CLOTHING · BANGLADESH
+        </p>
+    </div>
+
+    <!-- Navigation -->
+    
+
+<!-- Navigation Header -->
+<header class="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-7">
+
+        <!-- Logo + Brand Name -->
+        <a href="#home"
+           class="flex shrink-0 items-center gap-2 sm:gap-3">
+
+            <img
+                src="avorelle-logo.jpeg"
+                alt="AVORELLE Logo"
+                class="h-9 w-9 object-contain sm:h-11 sm:w-11"
+            >
+
+            <span class="text-lg font-black tracking-[2px] text-white sm:text-2xl">
+                AVORELLE<span class="text-gray-500">.</span>
+            </span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="flex items-center gap-3 text-xs sm:gap-6 sm:text-sm md:gap-8">
+
+            <a href="#home"
+               class="transition hover:text-gray-400">
+                Home
+            </a>
+
+            <a href="#about"
+               class="transition hover:text-gray-400">
+                About
+            </a>
+
+            <a href="#collection"
+               class="transition hover:text-gray-400">
+                Products
+            </a>
+
+            <a href="#contact"
+               class="transition hover:text-gray-400">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="relative mx-auto grid max-w-7xl items-center gap-12 overflow-hidden px-4 py-20 sm:px-7 sm:py-28 lg:grid-cols-2">
+
+        <div class="glow absolute -left-32 -top-20 h-96 w-96"></div>
+
+        <div class="relative z-10">
+
+            <p class="mb-6 inline-block rounded-full border border-white/20 px-4 py-2 text-[10px] tracking-[3px] text-gray-400">
+                THE EVERYDAY COLLECTION
+            </p>
+
+            <h1 class="text-5xl font-black leading-tight tracking-tight sm:text-7xl">
+                WEAR YOUR
+                <span class="block text-gray-500">IDENTITY.</span>
+            </h1>
+
+            <p class="mt-6 max-w-lg text-sm leading-7 text-gray-400 sm:text-base">
+                Clean fits. Confident looks. Everyday comfort.
+                Discover your favourite clothing collection with AVORELLE.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+
+                <a href="#collection"
+                   class="order-btn rounded-full bg-[#f5f2eb] px-7 py-3 text-sm font-bold text-black">
+                    Explore Collection ↗
+                </a>
+
+                <a href="#about"
+                   class="rounded-full border border-white/30 px-7 py-3 text-sm hover:bg-white hover:text-black">
+                    Discover More
+                </a>
+
+            </div>
+
+            <div class="mt-12 flex gap-10 border-t border-white/10 pt-7">
+
+               
+                <div>
+                    <h3 class="text-2xl font-bold">M–XL</h3>
+                    <p class="mt-1 text-xs text-gray-500">Available Size Options</p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold">Stay with Avorelle</h3>
+                    <p class="mt-1 text-xs text-gray-500">Our Identity</p>
+                </div>
+
+            </div>
+
+            <p class="mt-3 text-[10px] text-gray-600">
+                Prices are temporary demo prices. Confirm actual prices before ordering.
+            </p>
+
+        </div>
+
+        
+<!-- 3D Hero Design with AVORELLE Logo -->
+<div class="relative mx-auto w-full max-w-lg">
+
+    <!-- 3D Glass Card -->
+    <!-- <div
+        class="glass relative rotate-2 rounded-[30px] p-4
+               transition duration-500 hover:rotate-0 sm:p-6" -->
+    
+<!-- 
+        Card Background -->
+        <!-- <div
+            class="relative flex min-h-[350px] items-center justify-center
+                   overflow-hidden rounded-3xl
+                   bg-gradient-to-br from-gray-700 via-gray-900 to-black
+                   sm:min-h-[450px]"
+        > -->
+
+            <!-- Background Circle 1 -->
+            <!-- <div
+                class="absolute h-64 w-64 rounded-full
+                       border border-white/10 sm:h-80 sm:w-80">
+            </div> -->
+
+            <!-- Background Circle 2  -->
+            <!-- <div
+                class="absolute h-48 w-48 rounded-full
+                       border border-white/10 sm:h-60 sm:w-60">
+            </div> -->
+
+            <!-- ! Logo Container -- -->
+            <div
+                class="relative z-10 flex w-[100%] items-center justify-center
+                       overflow-hidden rounded-2xl border border-white/20
+                       bg-black/80 p-3 shadow-2xl
+                       transition duration-500 hover:scale-105
+                       sm:p-5"
+            >
+
+                <!-- Your AVORELLE Logo Image -->
+                <img
+                    src="WhatsApp Image 2026-11-02 at 9.05.11 PM.jpeg"
+                    alt="AVORELLE - Feel the Fit. Own the Vibe."
+                    class="h-auto w-full max-w-[500px] object-contain"
+                >
+
+            </div>
+
+            <!-- Top Label -->
+            <p
+                class="absolute left-5 top-5 z-20
+                       text-[10px] tracking-[3px] text-gray-300 sm:text-xs"
+            >
+                
+            </p>
+
+            <!-- Bottom Label -->
+            <p
+                class="absolute bottom-5 right-5 z-20
+                       text-[9px] tracking-[2px] text-gray-300 sm:text-xs"
+            >
+               
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Product Collection -->
+    <section id="collection" class="mx-auto max-w-7xl px-4 py-16 sm:px-7 sm:py-20">
+
+        <div class="mb-8">
+
+            <p class="text-xs tracking-[4px] text-gray-500">
+                FIND YOUR STYLE
+            </p>
+
+            <h2 class="mt-3 text-3xl font-black sm:text-5xl">
+                OUR COLLECTION<span class="text-gray-500">.</span>
+            </h2>
+
+            <p class="mt-4 text-sm text-gray-400">
+                Explore AVORELLE products and choose your favourite fit.
+            </p>
+
+        </div>
+
+        <!-- Search -->
+        <div class="mb-6">
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search products..."
+                class="w-full rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm outline-none focus:border-white/50 sm:max-w-sm"
+            >
+        </div>
+
+        <!-- Category Filters -->
+        <div id="filters" class="mb-8 flex gap-2 overflow-x-auto pb-3">
+
+            <button class="filter-btn active" data-category="All">All Products</button>
+
+            <button class="filter-btn" data-category="Half Shirt">Half Shirt</button>
+
+            <button class="filter-btn" data-category="Polo Shirt">Polo Shirt</button>
+
+            <button class="filter-btn" data-category="Drop Shoulder">Drop Shoulder</button>
+
+            <button class="filter-btn" data-category="T-Shirt">T-Shirt</button>
+
+            <button class="filter-btn" data-category="Hoodie">Hoodie</button>
+
+            <button class="filter-btn" data-category="Sweatshirt">Sweatshirt</button>
+
+            <button class="filter-btn" data-category="Panjabi">Panjabi</button>
+
+            <button class="filter-btn" data-category="Formal Shirt">Formal Shirt</button>
+
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid"
+             class="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
+        </div>
+
+        <p class="mt-6 text-center text-xs leading-6 text-gray-500">
+            Product prices are demo prices. Please confirm stock, size and final price before ordering.
+        </p>
+
+    </section>
+
+    <!-- Original Catalogue -->
+    <section class="mx-auto max-w-7xl px-4 py-10 sm:px-7">
+
+        <div class="glass rounded-3xl p-6 sm:p-9">
+
+            <p class="text-xs tracking-[3px] text-gray-500">
+                ORIGINAL AVORELLE CATALOGUE
+            </p>
+
+            <h2 class="mt-3 text-2xl font-black sm:text-3xl">
+                Explore All Original Products
+            </h2>
+
+            
+                Open Original Catalogue ↗
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about" class="border-y border-white/10 bg-white/[.025]">
+
+        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-7 sm:py-20">
+
+            <p class="text-xs tracking-[4px] text-gray-500">
+                ABOUT AVORELLE
+            </p>
+
+            <h2 class="mt-4 text-3xl font-black sm:text-5xl">
+                YOUR LOOK. YOUR CONFIDENCE.
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-sm leading-7 text-gray-400">
+                AVORELLE is a Bangladeshi clothing brand focused on everyday style,
+                comfort and a clean, confident look. Stay connected with us for new collections.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mx-auto max-w-7xl px-4 py-16 sm:px-7 sm:py-20">
+
+        <div id="order" class="glass flex flex-col justify-between gap-6 rounded-3xl p-7 sm:p-10 md:flex-row md:items-center">
+
+            <div>
+                <p class="text-xs tracking-[3px] text-gray-500">
+                    READY TO ORDER?
+                </p>
+
+                <h2 class="mt-3 text-3xl font-black sm:text-4xl">
+                    FIND YOUR FIT.
+                </h2>
+
+                <p class="mt-4 max-w-xl text-sm leading-7 text-gray-400">
+                    Choose a product, select a size and send your order through WhatsApp.
+                    We will confirm the final price and availability.
+                </p>
+            </div>
+
+            <a
+                href="https://wa.me/8801629461476"
+                target="_blank"
+                rel="noopener"
+                class="order-btn rounded-full bg-[#f5f2eb] px-7 py-4 text-center text-sm font-bold text-black"
+            >
+                CONTACT ON WHATSAPP ↗
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 px-4 py-8 text-center">
+
+        <h2 class="text-lg font-black tracking-[5px]">
+            AVORELLE
+        </h2>
+
+        <p class="mt-3 text-xs text-gray-500">
+            Wear Your Identity. Stay With AVORELLE.
+        </p>
+
+        <p class="mt-3 text-xs text-gray-600">
+            © <span id="year"></span> AVORELLE. All rights reserved.
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        /*
+          PRODUCT IMAGE NOTE:
+          Replace each image URL below with the direct URL of your actual
+          product photo. Google Sites page URLs are not direct image URLs.
+        */
+
+        const products = [
+
+            {
+                name: "Classic Half Shirt",
+                category: "Half Shirt",
+                price: 550,
+                image: "",
+                color: "#bcb8ae"
+            },
+
+            {
+                name: "Deep Teal Half Shirt",
+                category: "Half Shirt",
+                price: 550,
+                image: "",
+                color: "#174d4b"
+            },
+
+            {
+                name: "Pastel Stripe Half Shirt",
+                category: "Half Shirt",
+                price: 550,
+                image: "",
+                color: "#d99da9"
+            },
+
+            {
+                name: "Premium Polo Shirt",
+                category: "Polo Shirt",
+                price: 550,
+                image: "",
+                color: "#742c36"
+            },
+
+            {
+                name: "Classic Polo",
+                category: "Polo Shirt",
+                price: 550,
+                image: "",
+                color: "#263d32"
+            },
+
+            {
+                name: "Signature Drop Shoulder",
+                category: "Drop Shoulder",
+                price: 550,
+                image: "",
+                color: "#373737"
+            },
+
+            {
+                name: "Oversized Drop Shoulder",
+                category: "Drop Shoulder",
+                price: 550,
+                image: "",
+                color: "#bdb9b1"
+            },
+
+            {
+                name: "Classic T-Shirt",
+                category: "T-Shirt",
+                price: 550,
+                image: "",
+                color: "#c9c9c9"
+            },
+
+            {
+                name: "Everyday Hoodie",
+                category: "Hoodie",
+                price: 550,
+                image: "",
+                color: "#686868"
+            },
+
+            {
+                name: "Essential Sweatshirt",
+                category: "Sweatshirt",
+                price: 550,
+                image: "",
+                color: "#77716b"
+            },
+
+            {
+                name: "Classic Panjabi",
+                category: "Panjabi",
+                price: 550,
+                image: "",
+                color: "#222222"
+            },
+
+            {
+                name: "Formal Shirt",
+                category: "Formal Shirt",
+                price: 550,
+                image: "",
+                color: "#d4d1c8"
+            }
+
+        ];
+
+        /*
+          IMPORTANT:
+          This is the WhatsApp number currently used by the contact button.
+          Verify it belongs to your business before publishing.
+          Format: country code + number, no + sign or spaces.
+        */
+        const WHATSAPP_NUMBER = "8801629461476";
+
+        let selectedSizes = {};
+        let currentCategory = "All";
+
+        const productGrid = document.getElementById("productGrid");
+        const searchInput = document.getElementById("searchInput");
+
+        function renderProducts() {
+
+            const searchText = searchInput.value.toLowerCase().trim();
+
+            const filteredProducts = products.filter(product => {
+
+                const categoryMatch =
+                    currentCategory === "All" ||
+                    product.category === currentCategory;
+
+                const searchMatch =
+                    product.name.toLowerCase().includes(searchText) ||
+                    product.category.toLowerCase().includes(searchText);
+
+                return categoryMatch && searchMatch;
+
+            });
+
+            productGrid.innerHTML = filteredProducts.map((product) => {
+
+                const index = products.indexOf(product);
+                const size = selectedSizes[index] || "M";
+
+                const imageMarkup = product.image
+                    ? `<img src="${product.image}" alt="${product.name}" class="product-image">`
+                    : `<div class="product-image flex items-center justify-center"
+                            style="background:linear-gradient(135deg, ${product.color}, #151515)">
+                            <div class="text-center">
+                                <div class="text-3xl font-black tracking-[5px] text-white/70">AV</div>
+                                <div class="mt-3 text-[9px] tracking-[3px] text-white/50">AVORELLE</div>
+                            </div>
+                       </div>`;
+
+                return `
+
+                    <article class="product-card overflow-hidden rounded-2xl border border-white/10 bg-[#151515]">
+
+                        <div class="relative">
+
+                            ${imageMarkup}
+
+                            <span class="absolute left-3 top-3 rounded-full border border-white/20 bg-black/50 px-2 py-1 text-[9px] tracking-wider">
+                                AVORELLE
+                            </span>
+
+                        </div>
+
+                        <div class="p-3 sm:p-4">
+
+                            <p class="text-[10px] uppercase tracking-wider text-gray-500">
+                                ${product.category}
+                            </p>
+
+                            <h3 class="mt-2 min-h-[38px] text-sm font-bold leading-5 sm:text-base">
+                                ${product.name}
+                            </h3>
+
+                            <div class="mt-3 flex items-center justify-between">
+
+                                <span class="text-lg font-black">
+                                    ৳${product.price}
+                                </span>
+
+                                <span class="text-[10px] text-gray-500">
+                                    Demo price
+                                </span>
+
+                            </div>
+
+                            <div class="mt-4">
+
+                                <p class="mb-2 text-[10px] uppercase tracking-wider text-gray-500">
+                                    Select Size
+                                </p>
+
+                                <div class="flex flex-wrap gap-1.5">
+
+                                    ${["M", "L", "XL", "XXL"].map((s) => `
+
+                                        <button
+                                            class="size-btn ${size === s ? "active" : ""}"
+                                            onclick="chooseSize(${index}, '${s}')"
+                                            aria-pressed="${size === s}"
+                                        >
+                                            ${s}
+                                        </button>
+
+                                    `).join("")}
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="order-btn mt-4 w-full rounded-full bg-[#f5f2eb] px-3 py-3 text-xs font-bold text-black sm:text-sm"
+                                onclick="orderProduct(${index})"
+                            >
+                                ORDER NOW ↗
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                `;
+
+            }).join("");
+
+            if (filteredProducts.length === 0) {
+
+                productGrid.innerHTML = `
+                    <div class="col-span-full rounded-2xl border border-white/10 p-10 text-center text-sm text-gray-400">
+                        No products found.
+                    </div>
+                `;
+
+            }
+
+        }
+
+        function chooseSize(index, size) {
+
+            selectedSizes[index] = size;
+            renderProducts();
+
+        }
+
+        function orderProduct(index) {
+
+            const product = products[index];
+            const size = selectedSizes[index] || "M";
+
+            const message =
+                `Assalamu Alaikum AVORELLE! I want to order:\n\n` +
+                `Product: ${product.name}\n` +
+                `Category: ${product.category}\n` +
+                `Size: ${size}\n` +
+                `Listed Price: ৳${product.price}\n\n` +
+                `Please confirm stock, final price and delivery charge.`;
+
+            const whatsappURL =
+                `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+            window.open(whatsappURL, "_blank", "noopener");
+
+        }
+
+        document.querySelectorAll(".filter-btn").forEach((button) => {
+
+            button.addEventListener("click", () => {
+
+                document.querySelectorAll(".filter-btn").forEach((item) => {
+                    item.classList.remove("active");
+                });
+
+                button.classList.add("active");
+                currentCategory = button.dataset.category;
+
+                renderProducts();
+
+            });
+
+        });
+
+        searchInput.addEventListener("input", renderProducts);
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        renderProducts();
+
+    </script>
+
+</body>
+</html>
+```
